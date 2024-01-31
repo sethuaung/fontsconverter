@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+ 
+
+  <div class="container-fluid bg-light">
+        <h1 align="center" class="p-3">Myanmar Name To English Name Changer Tool</h1>
+        <table class="table">
+          <tr class="table-info">
+            <td><b>Heads up!</b> Because of the more complicated CSS used to generate our table variants, they most likely won’t see color mode adaptive styling until v6. Heads up! Because of the more complicated CSS used to generate our table variants, they most likely won’t see color mode adaptive styling until v6.</td>
+          </tr>
+        </table>
+        <form class="row g-3">
+            <div class="col-md-6">
+              <h3 class="text-center text-success">Please Type Myanmar Name</h3>
+              <!-- <input type="text" class="form-control" id="txt" placeholder="စာရိုက်ထည့်ပါ" oninput="go()"> -->
+              <textarea class="form-control" id="txt" rows="10" placeholder="စာရိုက်ထည့်ပါ" oninput="go()"></textarea>
+            </div>
+            <div class="col-md-6">
+              <h3 class="text-center text-success">English Name</h3>
+              <p class="text-bg-info" id="out"></p>
+            </div>
+        </form>
+
+        <br>
+
+        <div class="container-fluid text-bg-secondary text-center">
+          <div class="row">
+            <div class="col-sm"></div>
+            <div class="col-sm">
+              <p class="p-3"> CREDITS: This Converter is Contributed and Powered by <a href="https://mmweb.neocities.org/" class="link-warning">neocities.org</a>.</p>
+              <p> Copyright © <span id="year"></span> Felixent. All rights reserved</p>
+            </div>
+            <div class="col-sm"></div>
+          </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+    <script src="./js/mte.js"></script>
+    <script>
+        window.onload = function(){
+        var date = new Date().getFullYear();
+        document.getElementById("year").innerHTML = date;
+        }
+    </script>
+
+</body>
+</html>

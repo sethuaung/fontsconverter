@@ -1,0 +1,131 @@
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <h1>Zawgyi to Unicode <--> Unicode to Zawgyi Converter</h1>
+	<script src="./js/rabbit.js"></script>
+	<link rel="stylesheet" href="./css/rabbitstyle.css">
+
+    
+
+    <script type="text/javascript">
+      function clearText() {
+        document.getElementById("unicode").value = "";
+        document.getElementById("zawgyi").value = ""
+      }
+    </script>
+</head>
+<body>
+<div id="container">
+	<header>
+		<img src="./img/rabbit.png">
+		<h2 align="center" class="p-3">Rabbit:: Zawgyi to Unicode, Unicode to Zawgyi Converter</h2>
+	</header>
+  <br>  
+    <div class="textContainer">
+
+        <section id="Unicode">
+            <h3>Unicode</h3>
+            <textarea id="unicode" onfocus="handleOnFocus(this)" onblur="handleOnBlur()">တိတ်တိတ်နေ ထောင်တန် – Silence is worth a thousand words.
+
+တိမ်မယောင်နှင့်နက်၊ လွယ်မယောင်နှင့်ခက် – Shallow in appearance but deep, easy in appearance but hard.</textarea>
+        </section>
+        
+        <section id="Zawgyi">
+            <h3>Zawgyi</h3>
+            <textarea id="zawgyi" onfocus="handleOnFocus(this)" onblur="handleOnBlur()">တိတ္တိတ္ေန ေထာင္တန္ – Silence is worth a thousand words.
+
+တိမ္မေယာင္ႏွင့္နက္၊ လြယ္မေယာင္ႏွင့္ခက္ – Shallow in appearance but deep, easy in appearance but hard.</textarea>
+        </section>
+    </div>
+    <div class="textContainer">
+    <section id="buttons">
+        <input type="button" value="Clear Text" onclick="clearText()">
+        <input type="button" value="Copy Zawgyi" onclick="copyZawgyi()">
+        <input type="button" value="Copy Unicode" onclick="copyUnicode()">
+    </section>
+  </div>
+<script>
+
+var textFieldInFocus;
+function handleOnFocus(form_element)
+{
+   textFieldInFocus = form_element;
+}
+function handleOnBlur()
+{
+   textFieldInFocus = null;
+}
+
+var unicode = document.getElementById("unicode");
+var zawgyi = document.getElementById("zawgyi");
+
+onchangeHandler(unicode,zawgyi,"uni2zg");
+onchangeHandler(zawgyi,unicode,"zg2uni");
+
+function converter(textField,tochangeField,toconv) {
+    if(tochangeField != textFieldInFocus) {
+        if(toconv == "uni2zg") {
+              tochangeField.value = Rabbit.uni2zg(textField.value);
+        }
+        else {
+             tochangeField.value = Rabbit.zg2uni(textField.value);
+        }
+    }
+}
+
+function onchangeHandler(textField,tochangeField,toconv) {
+    
+    if (textField.addEventListener) {
+      textField.addEventListener('input', function() {
+          converter(textField,tochangeField,toconv);
+      }, false);
+    } else if (textField.attachEvent) {
+      textField.attachEvent('onpropertychange', function() {
+        // IE
+          converter(textField,tochangeField,toconv);
+      });
+    }
+    
+}
+
+function copyZawgyi() {
+  /* Get the text field */
+  var copyText = document.getElementById("zawgyi");
+
+  /* Select the text field */
+  copyText.select(); 
+  copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+}
+
+function copyUnicode() {
+  /* Get the text field */
+  var copyText = document.getElementById("unicode");
+
+  /* Select the text field */
+  copyText.select(); 
+  copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+}
+</script>
+
+
+
+</body>
+    <script>
+        window.onload = function(){
+        var date = new Date().getFullYear();
+        document.getElementById("year").innerHTML = date;
+        }
+    </script>
+        <p> CREDITS: This converter is Contributed and Powered by <a href="https://www.rabbit-converter.org/">Rabbit Converter</a>.</p>
+        <p> Copyright © <span id="year"></span> Felixent. All rights reserved</p>  
+          <!-- https://sites.google.com/view/felixent/home -->
+      </div>
+</html>

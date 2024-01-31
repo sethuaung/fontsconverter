@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Burglish</title>
+    <script src="js/burglish.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="css/burglish.css">
+    <link rel="stylesheet" href="css/burglish-img.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function() { Burglish().load();});
+    </script>
+  </head>
+  <body>
+    <div class="burglish">
+      <div class="workspace">
+        <div class="src">
+          <div>
+            <ol id="source"></ol>
+            <ol id="sourceOption"></ol>
+            <ol id="sourceSwitch"></ol>
+          </div>
+          <div class="context">
+            <textarea id="sourceText"></textarea>
+          </div>
+        </div>
+        <div class="tar">
+          <div>
+            <ol id="target"></ol>
+            <ol id="targetOption"></ol>
+          </div>
+          <div class="context">
+            <textarea id="targetText"></textarea>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="options" id="hW"></div> -->
+      <div id="sourceFilter" class="filters wL">
+        <div class="exceptions">
+          <div>
+            <p>NZ list not to Qx(seperated by commas),case ignore -> sourceExcept</p>
+            <textarea id="sourceExcept"></textarea>
+          </div>
+        </div>
+        <div class="force">
+          <div>
+            <p>Force Qx list(seperated by commas),case sensitive -> sourceForce</p>
+            <textarea id="sourceForce"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+      <script>
+        window.onload = function(){
+        var date = new Date().getFullYear();
+        document.getElementById("year").innerHTML = date;
+        }
+    </script>
+        <p> CREDITS: This Converter is Powered by <a href="https://burglish.my-mm.org//">Burglish</a>.</p>
+        <p> Copyright © <span id="year"></span> Felixent. All rights reserved</p> 
+</html>

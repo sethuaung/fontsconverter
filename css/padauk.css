@@ -1,0 +1,9 @@
+@font-face{
+  
+  font-family:padauk;
+  src:url('/padauk.ttf');
+}
+
+*{
+  font-family:padauk;
+}
